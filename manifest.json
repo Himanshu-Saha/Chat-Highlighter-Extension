@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Chat Highlighter Extension",
+  "description": "Alert the selected chat",
+  "version": "1.0.0",
+  "icons": {
+    "16": "./src/assets/images/icon-16.png",
+    "128": "./src/assets/images/icon-128.png"
+  },
+  "background": {
+    "service_worker": "./src/background/service-worker.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*"],
+      "js": ["/src/content/button.js"],
+      "type": "module",
+      "css": ["/src/styles/style.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["/src/assets/images/icon-button.png"],
+      "matches": ["https://x.com/*"]
+    }
+  ]
+}
