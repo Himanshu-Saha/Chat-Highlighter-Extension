@@ -14,7 +14,7 @@ function hasToolBarChild(node, imgButtonClickHandler) {
 
     imgButton.addEventListener("click", () => imgButtonClickHandler(node));
 
-    console.log("Toolbar found and button added!");
+    // console.log("Toolbar found and button added!");
   }
 }
 
@@ -45,7 +45,6 @@ function imgButtonClickHandler(node) {
   if (toolbarTweetNode) {
     alert(toolbarTweetNode.innerText);
   }
-  console.log(toolbarTweetNode.outerHTML);
 
   const nodeToPass = document.querySelector(
     '[data-testid="tweetTextarea_0RichTextInputContainer"]'
@@ -72,4 +71,4 @@ const config = {
 
 observer.observe(document.body, config);
 
-console.log("MutationObserver started!");
+// console.log("MutationObserver started!");
