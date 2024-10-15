@@ -1,14 +1,11 @@
-/* Container div styling */
 .image-button-container {
-    display: inline-block;
-    margin: 5px;
-  }
-  
-  /* Image button styling */
-  .image-button {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    float: right;
-  }
-  
+  display: inline-block;
+  margin: 5px;
+}
+
+.image-button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  float: right;
+}

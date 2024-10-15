@@ -32,6 +32,11 @@ function populateAndFocus(node) {
       placeholderDiv.classList.add("public-DraftEditorPlaceholder-hasFocus");
       contentEditableDiv.focus();
     }
+    if (contentEditableDiv) {
+      // contentEditableDiv.textContent = "test";
+      // contentEditableDiv.click();
+      // contentEditableDiv.dispatchEvent(new Event("input", { bubbles: true }));
+    }
   }
 }
 
@@ -40,6 +45,7 @@ function imgButtonClickHandler(node) {
   if (toolbarTweetNode) {
     alert(toolbarTweetNode.innerText);
   }
+  console.log(toolbarTweetNode.outerHTML);
 
   const nodeToPass = document.querySelector(
     '[data-testid="tweetTextarea_0RichTextInputContainer"]'
@@ -49,7 +55,6 @@ function imgButtonClickHandler(node) {
   }
 }
 
-// Create a MutationObserver to monitor changes in the DOM
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     mutation.addedNodes.forEach((node) => {
@@ -60,13 +65,11 @@ const observer = new MutationObserver((mutations) => {
   });
 });
 
-// Configuration for the observer
 const config = {
   childList: true,
   subtree: true,
 };
 
-// Start observing the document body for changes
 observer.observe(document.body, config);
 
 console.log("MutationObserver started!");
